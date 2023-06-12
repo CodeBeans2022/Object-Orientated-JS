@@ -74,16 +74,16 @@
 
 // ECMA 6 Feature - shorthand to declaring functions in objects
 // the this keyword in object refers to that particular object. Outside of object scope, this refers to the window object(global object)
-let userOne = {
-    email: 'james@gmail.com',
-    name: 'James',
-    login() {
-        console.log(this.email, 'has logged in');
-    },
-    logout() {
-        console.log(this.email, 'has logged out');
-    }
-};
+// let userOne = {
+//     email: 'james@gmail.com',
+//     name: 'James',
+//     login() {
+//         console.log(this.email, 'has logged in');
+//     },
+//     logout() {
+//         console.log(this.email, 'has logged out');
+//     }
+// };
 
 // console.log(userOne);
 // console.log(userOne.login());
@@ -102,32 +102,59 @@ let userOne = {
 
 // Bracket Notation
 
-console.log(userOne['email']);
+// console.log(userOne['email']);
 
-userOne['name'] = 'Max';
+// userOne['name'] = 'Max';
 
-console.log(userOne['name']);
+// console.log(userOne['name']);
 
-let prop = 'name'
+// let prop = 'name'
 
-console.log(userOne[prop]);
+// console.log(userOne[prop]);
 
-prop = 'email'
+// prop = 'email'
 
-console.log(userOne[prop]);
+// console.log(userOne[prop]);
 
 // Creating new properties on the object. Methods can be created as well.
-userOne.age = 24;
+// userOne.age = 24;
 
-console.log(userOne);
+// console.log(userOne);
 
-console.log(userOne.age);
+// console.log(userOne.age);
 
 // Creating property setting it's value as a function. Not best practice
-userOne.message = function () {
-    console.log('The toes beans');
+// userOne.message = function () {
+//     console.log('The toes beans');
+// }
+
+// console.log(userOne.message());
+
+// Classes
+
+class User {
+    constructor(email, name) {
+        this.email = email;
+        this.name = name;
+    }
+    login() {
+        console.log(this.email, 'logged in');
+    }
+    logout() {
+        console.log(this.email, 'logged out');
+    }    
 }
 
-console.log(userOne.message());
+let userOne = new User('jamie@gmail.com', 'Jamie-Lee');
+let userTwo = new User('james@gmail.com', 'James-Lee');
 
+console.log(userOne);
+console.log(userTwo);
 
+userOne.login();
+userTwo.logout();
+
+// the 'new' keyword
+// creates a new empty object {}
+// sets the value of 'this' to be the new empty object
+// calls the constructor method
