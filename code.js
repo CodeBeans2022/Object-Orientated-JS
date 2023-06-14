@@ -130,7 +130,7 @@
 
 // console.log(userOne.message());
 
-// Classes
+// Classe Constructors
 
 class User {
     constructor(email, name) {
@@ -158,3 +158,6 @@ userTwo.logout();
 // creates a new empty object {}
 // sets the value of 'this' to be the new empty object
 // calls the constructor method
+
+// Method chaining
+
